@@ -1,0 +1,34 @@
+body {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#chart {
+  width: 1000px;
+  height: 400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrap {
+  position: relative;
+}
+
+.box {
+  width: 220px;
+  height: 50px;
+  background-color: #fffcd0;
+  position: absolute;
+  left: 40%;
+  top: 20px;
+}
+
+#result {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}

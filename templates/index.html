@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hill Climbing with Billboard.js</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/billboard.js@3.1.1/dist/billboard.min.css"
+    />
+    <link rel="stylesheet" href="../static/assets/style.css" />
+  </head>
+  <body>
+    <h1>Find Maximum with Hill Climbing</h1>
+    <!-- Div để hiển thị biểu đồ -->
+    <div id="chart"></div>
+    <div class="wrap">
+      <form onsubmit="event.preventDefault(); createChart();">
+        <label for="arrayInput">Enter an array (JSON format):</label>
+        <input
+          type="text"
+          id="arrayInput"
+          value="[1, 5, 10, 14, 14, 14, 22, 15, 10, 5, 16, 17]"
+        /><br />
+        <button>Create Chart</button>
+        <br />
+      </form>
+
+      <form onsubmit="event.preventDefault(); findMax();">
+        <label for="positionInput">Enter start position:</label>
+        <input type="number" id="positionInput" value="0" /><br />
+        <button>Find Maximum</button>
+      </form>
+
+      <div class="box"><p id="result"></p></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/billboard.js@3.1.1/dist/billboard.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/main.js') }}"></script>
+  </body>
+</html>
