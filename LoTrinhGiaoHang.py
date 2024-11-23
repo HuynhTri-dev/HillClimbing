@@ -16,7 +16,7 @@ def routeDistance(route, matrix):
         if matrix[route[i]][route[i + 1]] == 0:
             distance += 999999
         distance += matrix[route[i]][route[i + 1]]
-    distance += matrix[route[-1]][route[0]]  # Đảm bảo quay lại điểm đầu
+    distance += matrix[route[-1]][route[0]]  
     return distance
 
 def getRoutes(currentRoute):
@@ -26,7 +26,7 @@ def getRoutes(currentRoute):
         for j in range(i + 1, soDiem):
             newRoute = currentRoute[:]
             newRoute[i], newRoute[j] = newRoute[j], newRoute[i]
-            newRoutes.append(newRoute)  # Đã sửa dấu ngoặc vuông thành ngoặc tròn
+            newRoutes.append(newRoute)  
     return newRoutes
 
 def hillClimbing(matrix):
@@ -42,6 +42,8 @@ def hillClimbing(matrix):
 
         for newRoute in newRoutes:
             distance = routeDistance(newRoute, matrix)
+            # print("Lo trinh ke tiep: ", newRoute)
+            # print("Khoang cach cua lo trinh ke tiep: ", distance)
             if distance < bestDistance:
                 bestRoute = newRoute
                 bestDistance = distance
@@ -49,11 +51,14 @@ def hillClimbing(matrix):
         if bestDistance >= distanceCurrentRoute:
             break
         
-        currentRoute = bestRoute  # Đã sửa lại
+        currentRoute = bestRoute
         distanceCurrentRoute = bestDistance
+        print("--------------------------------------")
+        print("Lo trinh ngan nhat:", bestRoute)
+        print("Quang duong ngan nhat:", bestDistance)
+        
 
-    return currentRoute, distanceCurrentRoute
-
-best_route, best_distance = hillClimbing(matrix)
-print("Best route:", best_route)
-print("Best distance:", best_distance)
+hillClimbing(matrix)
+# bestRoute, bestDistance = hillClimbing(matrix)
+# print("Lo trinh ngan nhat:", bestRoute)
+# print("Khoang cach ngan nhat:", bestDistance)
