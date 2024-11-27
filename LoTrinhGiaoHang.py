@@ -56,7 +56,7 @@ def hillClimbing(matrix):
         # print("--------------------------------------")
         # print("Lo trinh ngan nhat:", bestRoute)
         # print("Quang duong ngan nhat:", bestDistance)
-        
+    return currentRoute, distanceCurrentRoute
 
 hillClimbing(matrix)
 bestRoute, bestDistance = hillClimbing(matrix)
