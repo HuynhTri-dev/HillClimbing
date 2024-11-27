@@ -30,12 +30,12 @@ def getRoutes(currentRoute):
             newRoutes.append(newRoute)  
     return newRoutes
 
-def hillClimbing(matrix, maxRestarts=10):
+def hillClimbing(matrix, loop=10):
     soDiem = len(matrix)
     bestOverallRoute = None
     bestOverallDistance = float('inf')
 
-    for restart in range(maxRestarts):
+    for i in range(loop):
         
         currentRoute = list(range(soDiem))
         random.shuffle(currentRoute)
@@ -64,13 +64,13 @@ def hillClimbing(matrix, maxRestarts=10):
             bestOverallRoute = currentRoute
             bestOverallDistance = distanceCurrentRoute
         
-        print(f"i {restart + 1}: Lo trinh: {currentRoute}, Khoang cach: {distanceCurrentRoute}")
+        print(f"i {i + 1}: Lo trinh: {currentRoute}, Khoang cach: {distanceCurrentRoute}")
 
     return bestOverallRoute, bestOverallDistance
 
 # Thực thi thuật toán
 print("Cai tien voi bien the Random Restart Hill-Climbing")
-bestRoute, bestDistance = hillClimbing(matrix, maxRestarts=10)
+bestRoute, bestDistance = hillClimbing(matrix, loop=10)
 print("======================================")
-print("Lộ trình tốt nhất toàn cục:", bestRoute)
-print("Khoảng cách ngắn nhất toàn cục:", bestDistance)
+print("Lo trinh to nhat toan cuc:", bestRoute)
+print("Khoang cach gan nhat toan cuc:", bestDistance)
