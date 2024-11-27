@@ -64,7 +64,11 @@ def hillClimbing(matrix, loop=10):
             bestOverallRoute = currentRoute
             bestOverallDistance = distanceCurrentRoute
         
-        print(f"i {i + 1}: Lo trinh: {currentRoute}, Khoang cach: {distanceCurrentRoute}")
+        loTrinh = []
+        for i in currentRoute:
+            loTrinh.append(chr(i + ord('a')))
+        
+        print(f"i {i + 1}: Lo trinh: {loTrinh}, Khoang cach: {distanceCurrentRoute}")
 
     return bestOverallRoute, bestOverallDistance
 
@@ -72,5 +76,10 @@ def hillClimbing(matrix, loop=10):
 print("Cai tien voi bien the Random Restart Hill-Climbing")
 bestRoute, bestDistance = hillClimbing(matrix, loop=10)
 print("======================================")
-print("Lo trinh to nhat toan cuc:", bestRoute)
+
+loTrinh = []
+for i in bestRoute:
+    loTrinh.append(chr(i + ord('a')))
+
+print("Lo trinh to nhat toan cuc:", loTrinh)
 print("Khoang cach gan nhat toan cuc:", bestDistance)

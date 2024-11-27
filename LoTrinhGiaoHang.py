@@ -60,5 +60,10 @@ def hillClimbing(matrix):
 
 hillClimbing(matrix)
 bestRoute, bestDistance = hillClimbing(matrix)
-print("Lo trinh ngan nhat:", bestRoute)
+
+loTrinh = []
+for i in bestRoute:
+    loTrinh.append(chr(i + ord('a')))
+
+print("Lo trinh ngan nhat:", loTrinh)
 print("Khoang cach ngan nhat:", bestDistance)
